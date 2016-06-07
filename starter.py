@@ -6,8 +6,8 @@ from command import command_dict
 
 bot_id = os.environ.get("BOT_ID")
 at_bot = "<@" + bot_id + ">:"
-example_command = "do"
 
+# slack bot key from local environment
 slack_client = SlackClient(os.environ.get("SLACK_BOT_TOKEN"))
 
 def handle_command(command, channel):

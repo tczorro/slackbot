@@ -3,9 +3,13 @@ import os
 
 
 def get_hamilton_weather():
+    # obtain OWM api key from local environment
     owm_key_id = os.environ.get("OWM")
+    # create an OWM object
     owm = pyowm.OWM(owm_key_id)
+    # obtain forecaster object
     fc = owm.daily_forecast("Hamilton,ca", limit=3)
+    # obtain a forecast object which contains multiple weather objects.
     f = fc.get_forecast()
     result = 'Three days forecast: \n'
     for weather in f:
